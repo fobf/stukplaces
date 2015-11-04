@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  
+  before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   # GET /places
   # GET /places.json
@@ -24,7 +26,7 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = current_user.places.new(place_params)
 
     respond_to do |format|
       if @place.save
