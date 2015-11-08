@@ -1,53 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @place.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @place.website %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
-
-<p>
-  
-  <%= @place.latitude %>
-</p>
-
-<p>
-  
-  <%= @place.longitude %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h3><%= @place.name  %></h3>
+      <p>
+        <strong>
+          Adress:
+        </strong>
+        <%= @place.address %>
+      </p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @place.phone %>
+      </p>
+      <p>
+        <strong>
+          Website:
+        </strong>
+        <%= @place.website %>
+      </p>
+      <p>
+        <strong>
+          Description:
+        </strong>
+        <%= @place.description %>
+      </p>
+      <div id="map-canvas" style="width: 230px; height: 230px;"></div>
+    </div>
+    <div class="col-md-6">
+       <h3> Reviews by People</h3>
+     </div> 
+    
+  </div>
+   
+</div>
 
 
+ 
 
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
-
- <div id="map" style="width: 230px; height: 230px;"></div>
- <div id="map-canvas" style="width: 230px; height: 230px;"></div>
 
 
 
@@ -70,15 +59,3 @@
     </script>
     
     
-   
-    <script>
-
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
-  });
-}
-
-    </script>
